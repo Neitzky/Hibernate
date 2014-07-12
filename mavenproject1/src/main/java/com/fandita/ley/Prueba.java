@@ -41,6 +41,14 @@ public class Prueba implements Serializable {
     public Prueba() {
     }
 
+    public Prueba(Integer id, String nombre, Float sueldo) {
+        this.id = id;
+        this.nombre = nombre;
+        this.sueldo = sueldo;
+    }
+
+    
+    
     public Prueba(Integer id) {
         this.id = id;
     }
