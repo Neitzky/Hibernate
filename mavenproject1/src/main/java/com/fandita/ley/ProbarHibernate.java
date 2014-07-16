@@ -6,6 +6,9 @@
 
 package com.fandita.ley;
 
+import java.util.ArrayList;
+import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 /**
@@ -25,10 +28,33 @@ public class ProbarHibernate {
         //Paso 1: Empezar la sesion.
         sesion.getTransaction().begin();
         
-        //Paso 2: Hacer una operación.
+        //Paso 2: Hacer una operaciï¿½n.
         sesion.save(new Prueba(23, "Fandita pandita", 23565f));
         //No pela el numero 23 porque en la tabla le pusimos "auto_increment" 
         
+        //sesion.update(new Usuario(1, "pedro", 4000f));
+        
+        Query q= sesion.createQuery("from Prueba");
+        //El Usuario no es el nombre de la tabla es el nombre de LA CLASE
+        ArrayList<Prueba> usuario=(ArrayList<Prueba>) q.list();
+        for(Prueba usu:usuarios){
+            System.out.println(usu);
+            q.list();
+        }
+        
+        
+        Criteria c=sesion.createCriteria(Prueba.class);
+        ArrayList<Prueba> usuario1=(ArrayList<Prueba>) c.list;
+        for(Prueba usu:usuarios1){
+            System.out.println(usu);
+            c.list();
+        }
+        
+        
+     
+             
+                        
+                
         //Paso3: Hacer el commit.
         sesion.getTransaction().commit();
         
