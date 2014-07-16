@@ -37,15 +37,14 @@ public class ProbarHibernate {
         Query q= sesion.createQuery("from Prueba");
         //El Usuario no es el nombre de la tabla es el nombre de LA CLASE
         ArrayList<Prueba> usuario=(ArrayList<Prueba>) q.list();
-        for(Prueba usu:usuarios){
+        for(Prueba usu:usuario){
             System.out.println(usu);
             q.list();
         }
-        
-        
+       
         Criteria c=sesion.createCriteria(Prueba.class);
-        ArrayList<Prueba> usuario1=(ArrayList<Prueba>) c.list;
-        for(Prueba usu:usuarios1){
+        ArrayList<Prueba> usuario1=(ArrayList<Prueba>) c.list();
+        for(Prueba usu:usuario1){
             System.out.println(usu);
             c.list();
         }
